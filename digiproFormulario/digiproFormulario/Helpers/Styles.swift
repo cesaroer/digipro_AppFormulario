@@ -49,9 +49,5 @@ class Styles {
         button.layer.cornerRadius = 20.0
         button.tintColor = UIColor.black
     }
-    
-    
-  
-    
+        
 }
-

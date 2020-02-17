@@ -13,7 +13,7 @@ class OnBoardingViewController: UIViewController {
     //Creamos los imageview
     
    let testImageView: UIImageView = {
-    let testImage = UIImage(named: "test")
+    let testImage = UIImage(named: "checklist")
     let imageView = UIImageView(image: testImage)
         
         //Habilitamos el autolayout
@@ -29,10 +29,12 @@ class OnBoardingViewController: UIViewController {
     let textView = UITextView()
         textView.text = "Llena el formulario con datos correctos y concisos. "
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.boldSystemFont(ofSize: 18)
+        textView.font = UIFont.boldSystemFont(ofSize: 21)
         textView.textAlignment = .center
         textView.isEditable = false
         textView.isScrollEnabled = false
+        textView.textColor = .white
+        textView.backgroundColor = .digiproAzul
         
         
         return textView
@@ -43,7 +45,9 @@ class OnBoardingViewController: UIViewController {
         
         let button = UIButton(type: .system)
         button.setTitle("PREV", for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitleColor(.white, for: .normal)
         return button
         
     }()
@@ -52,9 +56,23 @@ class OnBoardingViewController: UIViewController {
         
         let button = UIButton(type: .system)
         button.setTitle("NEXT", for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitleColor(.green, for: .normal)
         return button
         
+    }()
+    
+    //Creamos un PageControl para que nos indique en que View estamos posicionados
+    
+    private let pageControl: UIPageControl = {
+        
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = 3
+        pageControl.currentPageIndicatorTintColor = .green
+        pageControl.pageIndicatorTintColor = .digiproVerde
+        return pageControl
     }()
 
     override func viewDidLoad() {
@@ -62,6 +80,7 @@ class OnBoardingViewController: UIViewController {
     //Añadiremos nuestra imagen en una imageView
             
     view.addSubview(descriptionTextView)
+    view.backgroundColor = .digiproAzul
     setUpLayout()
     setupButtonControls()
         
@@ -105,15 +124,13 @@ class OnBoardingViewController: UIViewController {
     
     func setupButtonControls(){
         
-        previousButton.backgroundColor = .red
-        
-        let middleView = UIView()
-        middleView.backgroundColor = .green
         
         //Creamos un Stack View que es un arreglo de views
         
-        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton,middleView,nextButton])
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton,pageControl,nextButton])
+        
         bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+//        bottomControlsStackView.backgroundColor = .digiproAzul
         view.addSubview(bottomControlsStackView)
         
         //Configuramos la manera en que estara distribuido el StackVoew

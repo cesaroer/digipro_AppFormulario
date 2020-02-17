@@ -18,6 +18,7 @@
 		DBA43DD723F81C45009D6061 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA43DD623F81C45009D6061 /* Styles.swift */; };
 		DBA43DDB23F99A3C009D6061 /* ValidateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA43DDA23F99A3C009D6061 /* ValidateFunctions.swift */; };
 		DBCEB25923F9A10E00987411 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEB25823F9A10E00987411 /* OnBoardingViewController.swift */; };
+		DBCEB25B23FA1B4400987411 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEB25A23FA1B4400987411 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DBA43DD623F81C45009D6061 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		DBA43DDA23F99A3C009D6061 /* ValidateFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFunctions.swift; sourceTree = "<group>"; };
 		DBCEB25823F9A10E00987411 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		DBCEB25A23FA1B4400987411 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				DBA43DD623F81C45009D6061 /* Styles.swift */,
 				DBA43DDA23F99A3C009D6061 /* ValidateFunctions.swift */,
+				DBCEB25A23FA1B4400987411 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				DBA43DAB23F81A15009D6061 /* FormViewController.swift in Sources */,
 				DBA43DA723F81A15009D6061 /* AppDelegate.swift in Sources */,
 				DBA43DA923F81A15009D6061 /* SceneDelegate.swift in Sources */,
+				DBCEB25B23FA1B4400987411 /* Colors.swift in Sources */,
 				DBCEB25923F9A10E00987411 /* OnBoardingViewController.swift in Sources */,
 				DBA43DDB23F99A3C009D6061 /* ValidateFunctions.swift in Sources */,
 				DBA43DD723F81C45009D6061 /* Styles.swift in Sources */,
