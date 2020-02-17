@@ -37,15 +37,24 @@ class OnBoardingViewController: UIViewController {
         
         return textView
     }()
+    
+    //Creamos los botones para hacer el walkthroght y aplicamos private para encapsulacion en las clases
+   private let previousButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.setTitle("Prev", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+        
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     //Añadiremos nuestra imagen en una imageView
             
-            
-//  view.addSubview(testImageView)
     view.addSubview(descriptionTextView)
     setUpLayout()
+    setupButtonControls()
         
       
         
@@ -84,6 +93,23 @@ class OnBoardingViewController: UIViewController {
             
            
 }
+    
+    func setupButtonControls(){
+        view.addSubview(previousButton)
+        previousButton.backgroundColor = .red
+       
+        let 
+        
+        //Aplicamos constraints de esta manera para evitar poner .isActive = true
+        NSLayoutConstraint.activate([
+            // safeAreaLayoutGuide.bottomAnchor es para ponerlo debajo del notch
+            previousButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            previousButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            previousButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            previousButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    
+    }
 
 
 }
