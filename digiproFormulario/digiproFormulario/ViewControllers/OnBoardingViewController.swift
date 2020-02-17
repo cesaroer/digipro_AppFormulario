@@ -42,7 +42,16 @@ class OnBoardingViewController: UIViewController {
    private let previousButton: UIButton = {
         
         let button = UIButton(type: .system)
-        button.setTitle("Prev", for: .normal)
+        button.setTitle("PREV", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+        
+    }()
+    
+    private let nextButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.setTitle("NEXT", for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
         return button
         
@@ -95,18 +104,28 @@ class OnBoardingViewController: UIViewController {
 }
     
     func setupButtonControls(){
-        view.addSubview(previousButton)
+        
         previousButton.backgroundColor = .red
-       
-        let 
+        
+        let middleView = UIView()
+        middleView.backgroundColor = .green
+        
+        //Creamos un Stack View que es un arreglo de views
+        
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton,middleView,nextButton])
+        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bottomControlsStackView)
+        
+        //Configuramos la manera en que estara distribuido el StackVoew
+        bottomControlsStackView.distribution = .fillEqually
         
         //Aplicamos constraints de esta manera para evitar poner .isActive = true
         NSLayoutConstraint.activate([
             // safeAreaLayoutGuide.bottomAnchor es para ponerlo debajo del notch
-            previousButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            previousButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            previousButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            previousButton.heightAnchor.constraint(equalToConstant: 50)
+            bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
         ])
     
     }
